@@ -36,6 +36,11 @@ public abstract class Product {
 	public double getPrice() {
 		return price;
 	}
+	
+	public String getDescription() {
+		return description; 
+	}
+	
 
 	public interface DiscountStrategy {
 
@@ -79,5 +84,13 @@ public abstract class Product {
 		}
 
 	}
+	
+	
+	
+	
+
+	
+	
+	
 
 }

@@ -55,5 +55,18 @@ public class ShoppingCart {
 		return order;
 
 	}
+	
+	
+	
+	
+	public boolean contains(Product product) {
+		
+		return products.contains(product); 
+		
+		
+	}
+	
+	
+	
 
 }

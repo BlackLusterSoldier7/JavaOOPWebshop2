@@ -9,6 +9,11 @@ public class Order {
 	private int orderID;
 	
 	
+	public Order() {
+		
+	}
+	
+	
 	public Order(List<Product> products) {
 		
 		

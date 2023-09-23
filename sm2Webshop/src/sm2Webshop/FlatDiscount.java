@@ -8,6 +8,12 @@ public class FlatDiscount implements DiscountStrategy {
 
 	public FlatDiscount(double discountAmount) {
 
+		if (discountAmount < 0 || discountAmount > 100) {
+
+			throw new IllegalArgumentException("Discount percentage should be between 0 and 100 inclusive.");
+
+		}
+
 		this.discountAmount = discountAmount;
 
 	}

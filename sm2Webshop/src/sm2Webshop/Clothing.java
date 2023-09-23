@@ -31,5 +31,16 @@ public class Clothing extends Product {
 		System.out.println("Clothing Product: " + name + " - Size: " + size + " - Material: " + material);
 
 	}
+	
+	
+	public String displayProductDetailsReturn() {
+		
+		return "Clothing Product: " + name + " - Size: " + size + " - Material: " + material; 
+		
+		
+	}
+	
+	
+	
 
 }
