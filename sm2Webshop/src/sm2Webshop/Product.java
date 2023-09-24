@@ -1,53 +1,85 @@
 package sm2Webshop;
 
+import sm2Webshop.ProductOLD.DiscountStrategy;
+
 public abstract class Product {
+	
+	
+	private String name; 
+	private double price; 
+	private String description; 
+	
 
-	protected String name;
-	protected double price;
-	protected String description;
-
-	private DiscountStrategy discountStrategy;
-
+	private DiscountStrategy discountStrategy; 
+	
 	public Product(String name, double price, String description) {
-
-		this.name = name;
+		
+		
+		this.name = name; 
 		this.price = price;
-		this.description = description;
-		this.discountStrategy = null;
-
+		this.description = description; 
+		this.discountStrategy = null; 
+		
+		
+		
+		
 	}
-
-	public Product(String name, double price, String description, DiscountStrategy discountStrategy) {
-
-		this.name = name;
-		this.price = price;
-		this.description = description;
-		this.discountStrategy = discountStrategy;
-
+	
+	public Product(String name, double price, String description, DiscountStrategy discountStrategy) { 
+		
+		this.name = name; 
+		this.price = price; 
+		this.description = description; 
+		this.discountStrategy = discountStrategy; 
+		
+		
 	}
+	
 
-	// Abstract method
-	public abstract void displayProductDetails();
-
+	
+	// Abstract method 
+	public abstract void displayProductDetails(); 
+	
 	public String getName() {
-		return name;
+		
+		return name; 
+		
 	}
-
+	
+	
 	public double getPrice() {
-		return price;
+		
+		return price; 
+		
 	}
 	
 	public String getDescription() {
+		
+		
 		return description; 
+		
 	}
 	
-
-	public interface DiscountStrategy {
-
-		double applyDiscount(double price);
-
+	
+	public void setPrice(double price) {
+		
+		this.price = price;
 	}
-
+	
+	public void setDescription(String description) {
+		
+		this.description = description; 
+		
+	}
+	
+	
+	public interface DiscountStrategy {
+		
+		double applyDiscount(double price); 
+		
+		
+	}
+	
 	
 	public interface ProductDetails {
 		
@@ -64,31 +96,29 @@ public abstract class Product {
 		
 		double applyDiscount(double originalPrice); 
 		
-		
-		
-		
 	}
-	
-	
-	
-	
 	
 	public double getPriceAfterDiscount() {
-
-		if (discountStrategy != null) {
-
+		
+		
+		if(discountStrategy != null) {
 			return discountStrategy.applyDiscount(price);
-
 		} else {
-			return price;
+			return price; 
 		}
-
+		
 	}
 	
-	
-	
-	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

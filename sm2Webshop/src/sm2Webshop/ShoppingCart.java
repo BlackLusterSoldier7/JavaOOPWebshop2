@@ -33,7 +33,7 @@ public class ShoppingCart {
 		if (products.isEmpty()) {
 
 			System.out.println("Your Shopping Cart is empty. ");
-			return;
+		
 
 		}
 

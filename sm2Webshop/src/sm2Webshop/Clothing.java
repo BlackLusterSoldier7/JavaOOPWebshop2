@@ -28,14 +28,14 @@ public class Clothing extends Product {
 	@Override
 	public void displayProductDetails() {
 
-		System.out.println("Clothing Product: " + name + " - Size: " + size + " - Material: " + material);
+		System.out.println("Clothing Product: " + getName() + " - Size: " + size + " - Material: " + material);
 
 	}
 	
 	
 	public String displayProductDetailsReturn() {
 		
-		return "Clothing Product: " + name + " - Size: " + size + " - Material: " + material; 
+		return "Clothing Product: " + getName() + " - Size: " + size + " - Material: " + material; 
 		
 		
 	}
