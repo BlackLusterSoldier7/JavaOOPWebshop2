@@ -121,7 +121,8 @@ public class WebshopConsoleAppl {
 
 				System.out.println("Thank you for visiting bol.com");
 				// exit method
-				return;
+				break;
+				
 			default:
 				System.out.println("Give a valid input please. ");
 

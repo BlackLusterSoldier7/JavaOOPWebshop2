@@ -6,25 +6,14 @@ import java.util.List;
 public class Order {
 
 	private List<Product> orderedProducts;
-	private int orderID;
-	
-	
+
 	public Order() {
-		
+
 	}
-	
-	
+
 	public Order(List<Product> products) {
-		
-		
-	}
-	
 
-	public Order(int orderID, List<Product> products) {
-
-		this.orderID = orderID;
 		this.orderedProducts = new ArrayList<>(products);
-	
 
 	}
 
@@ -37,7 +26,7 @@ public class Order {
 
 		for (Product product : orderedProducts) {
 
-			total += product.getPrice();
+			total = total + product.getPrice();
 
 		}
 		return total;
@@ -48,11 +37,9 @@ public class Order {
 	@Override
 	public String toString() {
 
-		String result = "Order ID: " + orderID + "\n";
-		result = result + "Products in this order:\n";
+		String result = "Products in this order:\n";
 
-		
-		//looping through Ordered Products 
+		// looping through Ordered Products
 		for (Product product : orderedProducts) {
 
 			result = result + product.getName() + " - €" + product.getPrice() + "\n";
