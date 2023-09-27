@@ -10,7 +10,7 @@ public class Seller extends User {
 
 	public Seller(String username, String password, String email, String firstName, String lastName) {
 
-		super(username, password, email, firstName, lastName);
+		super(new UserProfile(username, password, email, firstName, lastName));
 		this.products = new ArrayList<>();
 
 	}

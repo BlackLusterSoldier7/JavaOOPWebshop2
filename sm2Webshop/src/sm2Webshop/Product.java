@@ -27,13 +27,7 @@ public class Product {
 
 	}
 
-	// default 
-	public void displayProductDetails() {
-		
-		
-		System.out.println("Product: " + name + ", Price: " + price + ", Description: " + description);
-		
-	}
+
 
 	public String getName() {
 

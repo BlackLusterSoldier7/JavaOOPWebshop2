@@ -9,6 +9,7 @@ public class WebshopConsoleAppl {
 
 	private User currentUser;
 	private Scanner scanner;
+	private WebshopUI webshopUI;
 
 	private ArrayList<Product> products = new ArrayList<>(); // een lijst waar je alle producten in kunt opslaan.
 
@@ -18,6 +19,7 @@ public class WebshopConsoleAppl {
 	public WebshopConsoleAppl() {
 
 		this.scanner = new Scanner(System.in);
+		this.webshopUI = new WebshopUI(); // Initialize the WebshopUI
 
 	}
 
@@ -52,9 +54,8 @@ public class WebshopConsoleAppl {
 
 		int numberExit = 10;
 
-		
-		//test line burak local git folder? 
-		
+		// test line burak local git folder?
+
 		while (numberExit != 0) {
 
 			printMenu();
@@ -85,7 +86,7 @@ public class WebshopConsoleAppl {
 			case 4:
 				if (currentUser != null) {
 
-					currentUser.viewSearchHistory();
+					//currentUser.viewSearchHistory();
 
 				} else {
 					System.out.println("Logg in to see view search history");
@@ -122,7 +123,7 @@ public class WebshopConsoleAppl {
 				System.out.println("Thank you for visiting bol.com");
 				// exit method
 				break;
-				
+
 			default:
 				System.out.println("Give a valid input please. ");
 
@@ -240,20 +241,27 @@ public class WebshopConsoleAppl {
 
 		System.out.println("1. Macbook Pro 2023 i9 - €3500");
 		System.out.println("2. iPhone 15 512 GB SpaceGray - €1700");
-		System.out.println("3. Headphones Apple Doktor Dre - €900");
+		System.out.println("3. Headphones Apple Dokter Dre - €900");
 		System.out.println("Choose a product from list. Enter 0 to stop. ");
 
 		int inputUser = scanner.nextInt();
 
-		if (inputUser == 1) {
-			System.out.println("You have chosen for product: " + inputUser);
+		Product chosenProduct = null;
 
-		} else if (inputUser == 2) {
-			System.out.println("You have chosen for product: " + inputUser);
+		switch (inputUser) {
 
-		} else if (inputUser == 3) {
-			System.out.println("You have chosen for product: " + inputUser);
-
+		case 1:
+			chosenProduct = new Product("Macbook Pro 2023 i9", 3500, "");
+			break;
+		case 2:
+			chosenProduct = new Product("iPhone 15 512 GB SpaceGray", 1700, "");
+			break;
+		case 3:
+			chosenProduct = new Product("Headphones Apple Dokter Dre", 900, "");
+			break;
+		default:
+			System.out.println("Invalid choice.");
+			break;
 		}
 
 	}
@@ -263,7 +271,7 @@ public class WebshopConsoleAppl {
 		// there is a user currently logged in.
 		if (currentUser != null) {
 
-			ShoppingCart cart = currentUser.getShoppingCartA();
+			ShoppingCart cart = currentUser.getShoppingCart();
 
 			Order order = cart.convertToOrder();
 			currentUser.addOrder(order);
@@ -303,9 +311,9 @@ public class WebshopConsoleAppl {
 
 	private void displayProductsInCart() {
 
-		if (currentUser != null && currentUser.getShoppingCartA() != null) {
+		if (currentUser != null && currentUser.getShoppingCart() != null) {
 
-			currentUser.getShoppingCartA().viewProducts();
+			currentUser.getShoppingCart().viewProducts();
 
 		} else {
 			System.out.println("User is not logged in or Shopping Cart is not initialized. ");

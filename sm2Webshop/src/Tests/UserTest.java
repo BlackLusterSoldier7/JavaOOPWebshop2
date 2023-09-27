@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import sm2Webshop.Order;
 import sm2Webshop.User;
+import sm2Webshop.UserProfile;
 
 public class UserTest {
 
@@ -15,7 +16,8 @@ public class UserTest {
 	@BeforeEach
 	void setUp() {
 
-		user = new User("Burak", "user", "burak@outlook.com", "burak", "ergin");
+		UserProfile userProfile = new UserProfile("Burak", "user", "burak@outlook.com", "burak", "ergin");
+		user = new User(userProfile);
 
 	}
 
@@ -32,6 +34,7 @@ public class UserTest {
 
 		String newUsername = "newUsername";
 		user.setUsername(newUsername);
+	
 		assertEquals(newUsername, user.getUsername());
 
 	}

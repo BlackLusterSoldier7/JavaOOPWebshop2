@@ -4,134 +4,109 @@ import java.util.*;
 
 public class User {
 
-	private String username;
-	private String password;
-
-	private String email;
-	private String firstName;
-	private String lastName;
+	private UserProfile profile;
 
 	private String[] searchHistory = new String[10];
-	private String[] shoppingCart = new String[10];
-
 	private List<String> searchHistoryList = new ArrayList<>();
-
 	private List<Order> orders = new ArrayList<>();
+	private ShoppingCart shoppingCart;
 
-	private ShoppingCart shoppingCartA;
+	public User(UserProfile profile) {
 
-	public ShoppingCart getShoppingCartA() {
-
-		if (shoppingCartA == null) {
-
-			shoppingCartA = new ShoppingCart();
-
-		}
-
-		return shoppingCartA;
-
+		this.profile = profile;
+		this.shoppingCart = new ShoppingCart();
 	}
 
 	public void addOrder(Order order) {
-		// add order to orders list. Element to the end of a list.
+
 		orders.add(order);
-
-	}
-
-	public void viewOrders() {
-
-		if (orders.isEmpty()) {
-
-			System.out.println("There are no orders");
-
-		} else {
-
-			System.out.println("You have the next orders: ");
-			for (Order order : orders) {
-
-				System.out.println(order);
-
-			}
-
-		}
 
 	}
 
 	public void addSearch(String searchQuery) {
 
+		for (int i = 0; i < searchHistory.length - 1; i++) {
+
+			searchHistory[i] = searchHistory[i + 1];
+
+		}
+
+		searchHistory[searchHistory.length - 1] = searchQuery;
+
 		searchHistoryList.add(searchQuery);
 
 	}
 
-	public User(String username, String password, String email, String firstName, String lastName) {
+	public UserProfile getProfile() {
 
-		this.username = username;
-		this.password = password;
-
-		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.shoppingCartA = new ShoppingCart();
+		return profile;
 
 	}
 
-	public void viewProfile() {
-
-		System.out.println("Username: " + username);
-		System.out.println("Email: " + email);
-		System.out.println("First Name: " + firstName);
-		System.out.println("Last Name: " + lastName);
+	public List<Order> getOrders() {
+		return orders;
 
 	}
 
-	public void viewSearchHistory() {
+	public String[] getSearchHistory() {
 
-		System.out.println("Search History");
-		for (String query : searchHistory) {
+		return searchHistory;
 
-			System.out.println("- " + query);
+	}
+
+	public List<String> getSearchHistoryList() {
+
+		return searchHistoryList;
+
+	}
+
+	public ShoppingCart getShoppingCart() {
+
+		if (shoppingCart == null) {
+
+			shoppingCart = new ShoppingCart();
 
 		}
+		return shoppingCart;
 
 	}
-
-	public void viewShoppingCart() {
-		System.out.println("Shopping cart: ");
-		for (String item : shoppingCart) {
-
-			if (item != null) {
-				System.out.println(item);
-
-			}
-
-		}
-	}
-
-	public String getUsername() {
-
-		return username;
-
-	}
-
+	
+	
 	public void setUsername(String username) {
-
-		this.username = username;
-
+		
+		this.profile.setUsername(username);
+		
 	}
-
-	public String getPassword() {
-
-		return password;
-
-	}
-
+	
+	
+	
 	public void setPassword(String password) {
-
-		this.password = password;
-
+		
+		this.profile.setPassword(password);
+		
 	}
+	
+	
+	public String getUsername() {
+		
+		return this.profile.getUsername(); 
+		
+	}
+	
+	
+	public String getPassword() {
+		
+		return this.profile.getPassword(); 
+		
+	}
+	
+	
+	
+	
 
-	public void login(String username, String password) {
+	public boolean login(String username, String password) {
+
+		return false;
 
 	}
 

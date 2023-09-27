@@ -21,7 +21,7 @@ public class BuyerTest {
 		// does not return null?. If the method does return null
 		// then the assertNotNull check will fail.
 
-		assertNotNull(buyer.getShoppingCartA());
+		assertNotNull(buyer.getShoppingCart());
 
 	}
 
@@ -33,7 +33,7 @@ public class BuyerTest {
 
 		buyer.addProductToCart(electronic);
 
-		assertTrue(buyer.getShoppingCartA().contains(electronic),
+		assertTrue(buyer.getShoppingCart().contains(electronic),
 				"Shopping cart should contain the added electronic product.");
 
 	}

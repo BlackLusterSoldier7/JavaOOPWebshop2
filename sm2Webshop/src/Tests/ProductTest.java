@@ -15,19 +15,12 @@ public class ProductTest {
 	@BeforeEach
 	void setUp() {
 		productWithoutDiscount = new Product("Macbook", 2500, "Macbook Pro 15 inch") {
-			@Override
-			public void displayProductDetails() {
 
-			}
 		};
 
 		productWithDiscount = new Product("Java book", 50, "Introduction to Java programming",
 				new TenPercentDiscountStrategy()) {
-			@Override
-			public void displayProductDetails() {
-					// implementatie van abstract methode hoef je niet te doen
-				// in unit testen 
-			}
+
 		};
 	}
 
@@ -69,11 +62,6 @@ public class ProductTest {
 	void testProductWithZeroPrice() {
 
 		Product zeroPricedProduct = new Product("Donal Duck strip", 0, "Gratis stripboek") {
-
-			@Override
-			public void displayProductDetails() {
-
-			}
 
 		};
 
