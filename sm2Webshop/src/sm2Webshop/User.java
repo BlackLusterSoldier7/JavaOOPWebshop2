@@ -20,12 +20,6 @@ public class User {
 
 	private ShoppingCart shoppingCartA;
 
-	public User() {
-
-		this.shoppingCartA = new ShoppingCart();
-
-	}
-
 	public ShoppingCart getShoppingCartA() {
 
 		if (shoppingCartA == null) {
@@ -77,6 +71,7 @@ public class User {
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.shoppingCartA = new ShoppingCart();
 
 	}
 

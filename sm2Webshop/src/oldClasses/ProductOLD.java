@@ -1,4 +1,4 @@
-package sm2Webshop;
+package oldClasses;
 
 public abstract class ProductOLD {
 

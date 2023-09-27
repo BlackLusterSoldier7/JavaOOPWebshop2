@@ -22,13 +22,6 @@ public class Electronic extends Product {
 
 	}
 
-	@Override
-	public void displayProductDetails() {
-
-		System.out.println("Electronic Product: " + getName() + " - Brand: " + brand + " - Warranty: " + warrantyPeriod);
-
-	}
-
 	public String displayProductDetailsReturn() {
 
 		return "Electronic Product: " + getName() + " - Brand: " + brand + " - Warranty: " + warrantyPeriod;

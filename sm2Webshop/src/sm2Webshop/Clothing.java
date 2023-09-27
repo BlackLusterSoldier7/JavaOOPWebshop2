@@ -24,13 +24,6 @@ public class Clothing extends Product {
 		this.material = material;
 
 	}
-
-	@Override
-	public void displayProductDetails() {
-
-		System.out.println("Clothing Product: " + getName() + " - Size: " + size + " - Material: " + material);
-
-	}
 	
 	
 	public String displayProductDetailsReturn() {
