@@ -5,16 +5,16 @@ public class UserProfile {
 	private String username;
 	private String password;
 	private String email;
-	private String firstName;
-	private String lastName;
+	private String firstname;
+	private String lastname;
 
-	public UserProfile(String username, String password, String email, String firstName, String lastName) {
+	public UserProfile(String username, String password, String email, String firstname, String lastname) {
 
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.firstname = firstname;
+		this.lastname = lastname;
 
 	}
 
@@ -55,13 +55,13 @@ public class UserProfile {
 
 	public String getFirstname() {
 
-		return this.firstName;
+		return this.firstname;
 
 	}
 
 	public void setFirstname(String firstname) {
 
-		this.firstName = firstname;
+		this.firstname = firstname;
 
 	}
 

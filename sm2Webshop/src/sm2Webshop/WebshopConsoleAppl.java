@@ -86,7 +86,7 @@ public class WebshopConsoleAppl {
 			case 4:
 				if (currentUser != null) {
 
-					//currentUser.viewSearchHistory();
+					// currentUser.viewSearchHistory();
 
 				} else {
 					System.out.println("Logg in to see view search history");

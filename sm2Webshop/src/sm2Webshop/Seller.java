@@ -8,9 +8,9 @@ public class Seller extends User {
 	// Ordered collection of elements.
 	private List<Product> products;
 
-	public Seller(String username, String password, String email, String firstName, String lastName) {
+	public Seller(String username, String password, String email, String firstname, String lastname) {
 
-		super(new UserProfile(username, password, email, firstName, lastName));
+		super(new UserProfile(username, password, email, firstname, lastname));
 		this.products = new ArrayList<>();
 
 	}

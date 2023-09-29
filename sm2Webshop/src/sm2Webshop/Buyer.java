@@ -7,9 +7,9 @@ public class Buyer extends User {
 
 	private ShoppingCart shoppingCart;
 
-	public Buyer(String username, String password, String email, String firstName, String lastName) {
+	public Buyer(String username, String password, String email, String firstname, String lastname) {
 
-		super(new UserProfile(username, password, email, firstName, lastName));
+		super(new UserProfile(username, password, email, firstname, lastname));
 
 		this.shoppingCart = new ShoppingCart();
 

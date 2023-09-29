@@ -18,7 +18,7 @@ public class ShoppingCart {
 		if (product != null) {
 
 			products.add(product);
-			// System.out.println(product.getName() + " has been added to your personal
+			 //System.out.println(product.getName() + " has been added to your personal
 			// shopping cart object. ");
 
 		} else {

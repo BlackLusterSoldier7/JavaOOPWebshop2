@@ -14,7 +14,7 @@ public class Product {
 		this.name = name;
 		this.price = price;
 		this.description = description;
-		this.discountStrategy = null;
+		//this.discountStrategy = null;
 
 	}
 
@@ -64,23 +64,9 @@ public class Product {
 
 	}
 
-	public interface ProductDetails {
+	
 
-		double getPrice();
-
-		String getDescription();
-
-		String getName();
-
-		double getPriceAfterDiscount();
-
-	}
-
-	public interface DiscountSt {
-
-		double applyDiscount(double originalPrice);
-
-	}
+	
 
 	public double getPriceAfterDiscount() {
 
